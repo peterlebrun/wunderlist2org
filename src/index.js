@@ -9,8 +9,8 @@ const foldersUrl = apiUrlBase + 'folders';
 
 const method = 'GET';
 const headers = {
-    'X-Access-Token': '',
-    'X-Client-Id': '',
+    'X-Access-Token': process.env.XACCESSTOKEN,
+    'X-Client-Id': process.env.XCLIENTID,
     'Content-Type': 'application/json',
 };
 
@@ -138,7 +138,7 @@ fetchEm(listsUrl, lists)
 
                 Object.keys(amalgam[folderId].lists[listId].tasks).forEach(taskId => {
                     let task = amalgam[folderId].lists[listId].tasks[taskId];
-                    write(task.title, 3);
+                    write('TODO ' + task.title, 3);
                     if (task.note !== undefined) {
                         write(
                             task.note
