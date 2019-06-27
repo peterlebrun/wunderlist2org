@@ -48,10 +48,6 @@ fetchEm(listsUrl, lists)
                         notes.forEach(note => {
                             lists[id]['notes'][note.task_id] = note.content;
                         });
-                        /*
-                        console.log(lists[id]);
-                        process.exit();
-                        */
                     }),
             ]);
         };
